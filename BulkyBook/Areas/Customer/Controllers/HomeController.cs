@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using BulkyBook.Models;
 using BulkyBook.Models.ViewModels;
 
-namespace BulkyBook.Areas.Customer.Controllers
+namespace BulkyBook.Web.Areas.Customer.Controllers
 {
     [Area("Customer")]
     public class HomeController : Controller
