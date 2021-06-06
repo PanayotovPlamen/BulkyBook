@@ -17,7 +17,7 @@ namespace BulkyBook.DataAccess.Repository
 
 		public void Update(Product product)
 		{
-			var objFromDb = _context.Products.FirstOrDefault(s => s.Id == product.Id);
+			Product objFromDb = _context.Products.FirstOrDefault(s => s.Id == product.Id);
 
 			if (objFromDb != null)
 			{
