@@ -8,28 +8,40 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": {
-            "url": "/Admin/Category/GetAll"
+            "url": "/Admin/Company/GetAll"
         },
         "columns": [
             { "data": "name", "width": "15%" },
-            { "data": "streetaddress", "width": "15%" },
-            { "data": "city", "width": "15%" },
-            { "data": "state", "width": "15%" },
-            { "data": "phonenumber", "width": "15%" },
+            { "data": "streetAddress", "width": "15%" },
+            { "data": "city", "width": "10%" },
+            { "data": "state", "width": "10%" },
+            { "data": "phoneNumber", "width": "15%" },
+            {
+                "data": "isAuthorizedCompany",
+                "render": function (data) {
+                    if (data) {
+                        return '<input type="checkbox" disabled checked/>';
+                    }
+                    else {
+                        return '<input type="checkbox" disabled/>';                        
+					}
+				},
+                "width": "10%"
+            },
             {
                 "data": "id",
                 "render": function (data) {
                     return `
                             <div class="text-center">
-                                <a href="/Admin/Category/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
+                                <a href="/Admin/Company/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
                                     <i class="fas fa-edit"></i> 
                                 </a>
-                                <a onclick=Delete("/Admin/Category/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
+                                <a onclick=Delete("/Admin/Company/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
                                     <i class="fas fa-trash-alt"></i> 
                                 </a>
                             </div>
                            `;
-                }, "width": "40%"
+                }, "width": "25%"
             }
         ]
     });

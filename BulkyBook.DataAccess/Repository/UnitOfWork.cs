@@ -17,6 +17,10 @@ namespace BulkyBook.DataAccess.Repository
 
             Product = new ProductRepository(_context);
 
+            Company = new CompanyRepository(_context);
+
+            ApplicationUser = new ApplicationUserRepository(_context);
+
             SP_Call = new SP_Call(_context);
         }
 
@@ -25,6 +29,10 @@ namespace BulkyBook.DataAccess.Repository
         public ICoverTypeRepository CoverType { get; private set; }
 
         public IProductRepository Product { get; private set; }
+
+        public ICompanyRepository Company { get; private set; }
+
+        public IApplicationUserRepository ApplicationUser { get; private set; }
 
         public ISP_Call SP_Call { get; private set; }
 
