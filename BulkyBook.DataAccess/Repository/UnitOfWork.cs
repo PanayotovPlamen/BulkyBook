@@ -21,6 +21,12 @@ namespace BulkyBook.DataAccess.Repository
 
             ApplicationUser = new ApplicationUserRepository(_context);
 
+            ShoppingCart = new ShoppingCartRepository(_context);
+
+            OrderHeader = new OrderHeaderRepository(_context);
+
+            OrderDetails = new OrderDetailsRepository(_context);
+                       
             SP_Call = new SP_Call(_context);
         }
 
@@ -33,6 +39,12 @@ namespace BulkyBook.DataAccess.Repository
         public ICompanyRepository Company { get; private set; }
 
         public IApplicationUserRepository ApplicationUser { get; private set; }
+
+        public IShoppingCartRepository ShoppingCart { get; private set; }
+
+        public IOrderDetailsRepository OrderDetails { get; private set; }
+
+        public IOrderHeaderRepository OrderHeader { get; private set; }
 
         public ISP_Call SP_Call { get; private set; }
 
